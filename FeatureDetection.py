@@ -62,7 +62,7 @@ def landmark_detection(image):
     gray_img = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
     #Implement warping
-    tao_asari_enhanced = warping.tao_asari_enhancement(image)
+    tao_asari_enhanced = warping.warping_enhancement(image)
     tao_gray = cv2.cvtColor(tao_asari_enhanced, cv2.COLOR_BGR2GRAY)
 
     rect_faces = np.copy(image)
