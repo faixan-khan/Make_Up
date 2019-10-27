@@ -2,7 +2,7 @@ from scipy.spatial import Delaunay
 import numpy as np
 import dlib
 import cv2
-import tao_asari
+import warping
 
 
 def rect_to_bb(rect):
@@ -61,8 +61,8 @@ def landmark_detection(image):
     predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
     gray_img = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
-    #Implement Tao Asari    
-    tao_asari_enhanced = tao_asari.tao_asari_enhancement(image)
+    #Implement warping
+    tao_asari_enhanced = warping.tao_asari_enhancement(image)
     tao_gray = cv2.cvtColor(tao_asari_enhanced, cv2.COLOR_BGR2GRAY)
 
     rect_faces = np.copy(image)
