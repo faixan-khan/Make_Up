@@ -1,5 +1,8 @@
 # DigitalFace Makeup
-    This project applies the make up from a reference image to a target on a pixel by pixel basis. The reference and target were aligned by warping using 77 detected face landmarks. The images were decomposed into large scale layer, detail layer  and color layer through which makeup highlights and color information were transferred by Poisson editing, weighted means and alpha blending. The test results showed that the techniques work wellwith reference images of a different age, a different skin color and even a hand-sketched reference image.
+    This project applies the make up from a reference image to a target on a pixel by pixel basis. The reference and target
+    were aligned by warping using 77 detected face landmarks. The images were decomposed into large scale layer, detail layer 
+    and color layer through which makeup highlights and color information were transferred by Poisson editing, weighted means and alpha blending. 
+    The test results showed that the techniques work wellwith reference images of a different age, a different skin color and even a hand-sketched reference image.
     
 ![alt text](SampleImages/Example.png)
 
