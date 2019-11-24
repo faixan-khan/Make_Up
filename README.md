@@ -16,7 +16,7 @@
       * opencv-python==4.1.2.30
       * scipy==1.3.3
 
-  Install the above requirements by 'sudo pip3 install requirements.txt'
+  Install the above requirements by 'sudo pip3 install -r requirements.txt'
 
 ## Installing
 
