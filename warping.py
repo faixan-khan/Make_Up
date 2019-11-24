@@ -107,7 +107,7 @@ class Aindane(object):
 
     def _color_restoration(self, S, lambdaa=[1, 1, 1]):
         S_restore = np.zeros(self.img_bgr.shape)
-        for j in xrange(3):  # b,g,r
+        for j in range(3):  # b,g,r
             S_restore[..., j] = S * (1.0 * self.img_bgr[..., j] / (self.img_gray + self._EPS)) * lambdaa[j]
 
         return np.clip(S_restore, 0, 255).astype('uint8')
@@ -136,6 +136,6 @@ if __name__ == '__main__':
     cv2.namedWindow("Enhanced Image")
     cv2.imshow("Original", img)
     enhanced = warping_enhancement(img)
-    print enhanced
+    print(enhanced)
     cv2.imshow("Enhanced Image",enhanced)
     cv2.waitKey(0)

@@ -25,7 +25,7 @@ def shape_to_np(feature_points, dtype="int"):
 
 class ForeheadCoordinateStore:
     def __init__(self,feature_points,image):
-        print "Select 10 points on forehead (left to right)"
+        print("Select 10 points on forehead (left to right)")
         cv2.namedWindow('Select_Forehead_Points')
         cv2.setMouseCallback('Select_Forehead_Points', self.select_point)
         self.points = np.zeros((78, 2), dtype="int")
@@ -48,12 +48,12 @@ class ForeheadCoordinateStore:
 
     def select_point(self,event,x,y,flags,param):
         if event == cv2.EVENT_LBUTTONDOWN:
-            print "Points selected " + str(self.count + 1)
+            print("Points selected " + str(self.count + 1))
             cv2.circle(self.output_marked_image, (x, y), 2, (0, 0, 255), -1)
             self.points[self.inputFeature + self.count] = np.array([x, y], dtype="int")
             self.count = self.count + 1
         if self.count == 10:
-            print "Points successfully selected"
+            print("Points successfully selected")
 
 def landmark_detection(image):
 
@@ -73,11 +73,11 @@ def landmark_detection(image):
         x, y, w, h = rect_to_bb(rect)
         cv2.rectangle(rect_faces, (x, y), (x + w, y + h), (255, 0, 0), 2)
     if len(dets) == 0:
-        print "No face detected in input image"
+        print ("No face detected in input image")
         exit()
 
     if len(dets) > 1:
-        print "More than one face detected in input image"
+        print("More than one face detected in input image")
         exit()
 
     feature_points = predictor(gray_img, rect)

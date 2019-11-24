@@ -74,7 +74,7 @@ if __name__ == "__main__":
     imPath1 = "./inputIm/face.jpg"
     image1 = cv2.imread(imPath1)
     if image1 is None:
-        print "Image Not Found"
+        print("Image Not Found")
         exit()
     r = image_height * 1.0 / image1.shape[0]
     dim = (int(image1.shape[1] * r), image_height)
@@ -83,7 +83,7 @@ if __name__ == "__main__":
     imPath2 = "./inputIm/face_man.jpg"
     image2 = cv2.imread(imPath2)
     if image2 is None:
-        print "Image Not Found"
+        print("Image Not Found")
         exit()
     r = image_height * 1.0 / image2.shape[0]
     dim = (int(image2.shape[1] * r), image_height)

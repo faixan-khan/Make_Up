@@ -6,9 +6,24 @@ import wsFilter
 import morphing
 
 image_height = 500
+if len(sys.argv) == 3:
+    sourceImagePath = sys.argv[1]
+    makeUpImagePath = sys.argv[2]
+else:
+    print("Synatx Error:Proper Syntax = python3 Makeup.py source refrence")
+    sys.exit()
 
-sourceImagePath = "./SampleImages/source.jpg"
 sourceImage = cv2.imread(sourceImagePath)
+makeUpImage = cv2.imread(makeUpImagePath)
+
+
+if sourceImage is None:
+    print("Source Image Doesn't exists")
+    sys.exit()
+if makeUpImage is None:
+    print("Reference Image Doesn't exist")
+    sys.exit()
+    
 r = image_height * 1.0 / sourceImage.shape[0]
 dim = (int(sourceImage.shape[1] * r), image_height)
 sourceImage = cv2.resize(sourceImage, dim, interpolation=cv2.INTER_AREA)
@@ -18,8 +33,7 @@ sourceTuple = (output_image1, feature_points1, triangulation1,K1)
 Kdash = (K1 - np.min(K1))/(np.max(K1)-np.min(K1))
 cv2.imshow("Face Mask",Kdash)
 
-makeUpImagePath = "./SampleImages/makeU.jpg"
-makeUpImage = cv2.imread(makeUpImagePath)
+
 r = image_height * 1.0 / makeUpImage.shape[0]
 dim = (int(makeUpImage.shape[1] * r), image_height)
 makeUpImage = cv2.resize(makeUpImage, dim, interpolation=cv2.INTER_AREA)
