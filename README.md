@@ -1,90 +1,50 @@
-# Digital Face Makeup
-
-###Problem Statement
-    The problem focuses on the fact that for a person it would be extremely helpful if a he/she can preview the makeup effects on her/his face without actually applying the makeup.
-
-One Paragraph of project description goes here
-
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+# DigitalFace Makeup
+    This project applies the make up from a reference image to a target on a pixel by pixel basis. The reference and target
+    were aligned by warping using 77 detected face landmarks. The images were decomposed into large scale layer, detail layer 
+    and color layer through which makeup highlights and color information were transferred by Poisson editing, weighted means and alpha blending. 
+    The test results showed that the techniques work wellwith reference images of a different age, a different skin color and even a hand-sketched reference image.
+    
+     ![alt text](./SampleImages/Example)
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+      * dlib==19.18.0
+      * numpy==1.17.4
+      * opencv-python==4.1.2.30
+      * scipy==1.3.3
+
+  Install the above requirements by 'sudo pip3 install requirements.txt'
+
 
 ```
 Give examples
 ```
 
-### Installing
+## Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
+      * Clone this repo in your local machine usine 'git clone https://github.com/akki111singh/Make_Up.git'
+      * Install all the requirements using 'pip3 install requirements.txt'
 
 ## Running the tests
+      * Do 'python3 Makeup.py source refrence'
+      * Select the Forehead points of Source Image using mouse
+      * Similarly select the Forehead points of thre refrence image
+      * After some time the Final output will be displayed'
+      * Press 'shift key' to exit the program'
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
 ## Contributing
+      
+      * Fork the project.
+      * Clone this repository to your local machine.
+      * Now add upstream by using command - **git remote add upstream "name of my repo"**
+      * Create a new branch on your local machine.
+      * Start contributing and make a pull request to apply these changes.
+   
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+See also the list of [contributors](https://github.com/Make_Up/contributors) who participated in this project.
 
-## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+## Refrences
+      * [DigitalFace Makeup by Example](https://www.comp.nus.edu.sg/~tsim/documents/face_makeup_cvpr09_lowres.pdf) Dong Guo and Terence Sim 
 
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
